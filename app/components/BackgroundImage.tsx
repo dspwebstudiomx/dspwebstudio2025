@@ -12,8 +12,11 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
 	className = "",
 }) => (
 	<div
-		className={`absolute inset-0 bg-[url('${imageUrl}')] bg-cover bg-center z-0 ${className}`}
-		style={{ opacity }}></div>
+		className={`absolute inset-0 bg-cover bg-center z-0 ${className}`}
+		style={{
+			backgroundImage: `url('${imageUrl}')`,
+			opacity,
+		}}></div>
 );
 
 export default BackgroundImage;
