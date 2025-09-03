@@ -1,65 +1,82 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
+	// Estado para el menú móvil
 	const [open, setOpen] = useState(false);
+	const [scrolled, setScrolled] = useState(false);
+
+	// Cambiar el estado de "scrolled" al hacer scroll
+	useEffect(() => {
+		const handleScroll = () => {
+			const scrollY = window.scrollY;
+			const vh = window.innerHeight * 0.6;
+			setScrolled(scrollY > vh);
+		};
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 
 	return (
-		<header className="bg-white shadow fixed top-0 left-0 w-full z-50">
-			<div className="mx-auto container py-8 flex justify-between items-center">
-				<h1 className="text-xl font-bold text-blue-600">Clínica Dental</h1>
+		<header
+			className={`shadow fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${open ? "bg-gray-950" : scrolled ? "bg-gray-950" : "bg-transparent"}`}>
+			<div className="mx-auto container py-8 flex justify-between items-center px-8 sm:px-0">
+				<h1 className="text-lg font-bold text-gray-100 uppercase">
+					dspwebstudio
+				</h1>
 
-				<nav className="hidden md:flex space-x-6">
-					<a href="#inicio" className="text-gray-700 hover:text-blue-600">
+				<nav className="hidden md:flex space-x-6 text-gray-100 uppercase ">
+					<a href="#inicio" className="hover:text-blue-600 tracking-wide">
 						Inicio
 					</a>
-					<a href="#servicios" className="text-gray-700 hover:text-blue-600">
+					<a href="#servicios" className="hover:text-blue-600">
 						Servicios
 					</a>
-					<a
-						href="#especialistas"
-						className="text-gray-700 hover:text-blue-600">
-						Especialistas
+					<a href="#paquetes" className="hover:text-blue-600">
+						Paquetes
 					</a>
-					<a href="#testimonios" className="text-gray-700 hover:text-blue-600">
+					<a href="#testimonios" className="hover:text-blue-600">
 						Testimonios
 					</a>
-					<a href="#contacto" className="text-gray-700 hover:text-blue-600">
+					<a href="#contacto" className="hover:text-blue-600">
 						Contacto
 					</a>
 				</nav>
 
 				{/* Botón móvil */}
 				<button
-					className="md:hidden text-gray-700"
+					className="md:hidden text-gray-100"
 					onClick={() => setOpen(!open)}>
-					☰
+					<GiHamburgerMenu size={28} />
 				</button>
 			</div>
 
 			{/* Menú móvil */}
 			{open && (
-				<nav className="md:hidden bg-white px-4 pb-4 space-y-2">
-					<a href="#inicio" className="block text-gray-700 hover:text-blue-600">
+				<nav className="md:hidden bg-blue-950 sm:px-4 sm:pb-4 space-y-2 h-[90vh]">
+					<a
+						href="#hero-container-main"
+						className="block text-gray-100 hover:bg-blue-600 text-xl uppercase tracking-widest p-8 active:text-blue-400 border-b-2 border-blue-400">
 						Inicio
 					</a>
 					<a
 						href="#servicios"
-						className="block text-gray-700 hover:text-blue-600">
+						className="block text-gray-100 hover:bg-blue-600 text-xl uppercase tracking-widest p-8 active:text-blue-400 border-b-2 border-blue-400">
 						Servicios
 					</a>
 					<a
-						href="#especialistas"
-						className="block text-gray-700 hover:text-blue-600">
-						Especialistas
+						href="#paquetes"
+						className="block text-gray-100 hover:bg-blue-600 text-xl uppercase tracking-widest p-8 active:text-blue-400 border-b-2 border-blue-400">
+						Paquetes
 					</a>
 					<a
 						href="#testimonios"
-						className="block text-gray-700 hover:text-blue-600">
+						className="block text-gray-100 hover:bg-blue-600 text-xl uppercase tracking-widest p-8 active:text-blue-400 border-b-2 border-blue-400">
 						Testimonios
 					</a>
 					<a
 						href="#contacto"
-						className="block text-gray-700 hover:text-blue-600">
+						className="block text-gray-100 hover:bg-blue-600 text-xl uppercase tracking-widest p-8 active:text-blue-400 border-b-2 border-blue-400">
 						Contacto
 					</a>
 				</nav>

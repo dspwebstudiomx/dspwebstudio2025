@@ -7,21 +7,15 @@ export function Welcome() {
 		<>
 			<Navbar />
 			<Hero
-				backgroundImage="https://images.unsplash.com/photo-1629909613638-0e4a1fad8f81?q=80&w=1772&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-				className="mt-20">
-				<h1 className="text-4xl lg:text-5xl">Hello World</h1>
-				<p className="text-md lg:text-xl leading-8">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ipsam
-					inventore dolor, nulla qui dolores voluptate voluptatibus repudiandae
-					fugit omnis aliquam vel aliquid at officia in debitis deleniti maiores
-					enim recusandae. Deleniti deserunt molestiae necessitatibus animi, eos
-					tempore similique aperiam libero exercitationem omnis officiis odio
-					accusamus assumenda commodi nam eveniet iusto ducimus? Dicta esse
-					laborum illo eaque odio, corporis modi commodi suscipit nam quas.
-					Quas, fugit suscipit sequi accusamus earum at sit magni! Quidem fugiat
-					quasi, reiciendis quisquam hic quaerat. A aspernatur velit ullam
-					laboriosam nobis! Cum, veniam. Commodi modi minima doloribus nobis
-					ipsa, ad quis voluptatibus quos alias nisi?
+				heroId="main"
+				backgroundImage="https://images.unsplash.com/photo-1644088379091-d574269d422f?q=80&w=1393&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+				className="-mt-24">
+				<h1 className="text-4xl lg:text-5xl text-center sm:text-left">
+					Transformamos tus ideas en experiencias digitales impactantes
+				</h1>
+				<p className="text-xl sm:text-md lg:text-xl leading-8">
+					Estamos aquí para ayudarte a construir tu presencia en línea y llevar
+					tus ideas al siguiente nivel.
 				</p>
 			</Hero>
 			<PageTemplate>
