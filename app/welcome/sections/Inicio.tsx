@@ -1,4 +1,6 @@
+import Button from "~/components/Buttons/Button";
 import Container from "~/components/Container";
+import Image from "~/components/Images/Image";
 import TitleH2 from "~/components/Titles/TitleH2";
 
 const Inicio = () => {
@@ -14,24 +16,14 @@ const Inicio = () => {
 							expertos está dedicado a transformar tus ideas en experiencias
 							digitales impactantes.
 						</p>
-						<div className="mt-12">
-							<a
-								href="#contacto"
-								className="inline-block px-8 py-5 bg-blue-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 w-[420px] animate-cta-pulse"
-								style={{ boxShadow: "0 0 0 0 rgba(37, 99, 235, 0.7)" }}>
-								¡Impulsa tu presencia digital hoy! Contáctanos para una asesoría
-								gratuita
-							</a>
-						</div>
+						<Button text="¡Impulsa tu presencia digital hoy! Contáctanos para una asesoría gratuita" />
 					</article>
 					<article className="p-6 md:p-0">
-						<img
+						<Image
 							src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 							alt="imagen de bienvenida"
 							width={600}
 							height={800}
-							srcSet=""
-							className="border-4 border-blue-400 rounded-4xl"
 						/>
 					</article>
 				</div>
