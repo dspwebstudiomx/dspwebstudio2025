@@ -10,7 +10,7 @@ const Navbar = () => {
 	useEffect(() => {
 		const handleScroll = () => {
 			const scrollY = window.scrollY;
-			const vh = window.innerHeight * 0.12;
+			const vh = window.innerHeight * 0.05;
 			setScrolled(scrollY > vh);
 		};
 		window.addEventListener("scroll", handleScroll);
@@ -20,13 +20,13 @@ const Navbar = () => {
 	return (
 		<header
 			className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${open ? "bg-gray-950" : scrolled ? "bg-blue-950 shadow-2xl" : "bg-transparent"}`}>
-			<div className="mx-auto container py-0 flex justify-between items-center px-8 sm:px-0">
+			<div className="mx-auto container py-0 flex justify-between items-center px-8 sm:px-0 lg:px-12 h-20">
 				{/* Logo */}
 				<a
 					href="#hero-container-main"
 					className="text-2xl font-bold text-white">
 					<img
-						src="/public/images/dsp-white.png"
+						src="/images/dsp-white.png"
 						alt="dspwebstudio logo"
 						width={120}
 					/>
