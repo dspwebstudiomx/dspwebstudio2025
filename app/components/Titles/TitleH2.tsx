@@ -6,7 +6,7 @@ type TitleH2Props = {
 
 const TitleH2 = ({ title }: TitleH2Props) => {
 	return (
-		<h2 className="text-4xl lg:text-4xl text-center sm:text-left mb-12 text-blue-400">
+		<h2 className="text-4xl lg:text-4xl text-center sm:text-left mb-12 text-blue-800">
 			{title}
 		</h2>
 	);
