@@ -1,4 +1,4 @@
-import placeholder from "../../../public/images/placeholder.png";
+import placeholder from "/images/placeholder.png?url";
 
 type imageProps = {
 	src: string;

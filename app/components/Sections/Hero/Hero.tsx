@@ -21,7 +21,7 @@ const Hero: React.FC<HeroProps> = ({
 			{/* Contenido */}
 			<div
 				id={`hero-content-${heroId}`}
-				className="container relative flex flex-col p-12 md:px-16 md:py-16 lg:px-0 gap-6 min-h-[80vh] text-gray-100 justify-center md:items-start z-10 h-full mx-auto">
+				className="container relative flex flex-col p-12 md:px-16 md:py-16 lg:px-0 gap-6 min-h-[100vh] md:min-h-[40vh] xl:min-h-[80vh] text-gray-100 justify-center md:items-start z-10 h-full mx-auto">
 				{children}
 			</div>
 		</section>
