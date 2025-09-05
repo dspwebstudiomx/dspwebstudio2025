@@ -19,16 +19,14 @@ const Navbar = () => {
 
 	return (
 		<header
-			className={`shadow fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${open ? "bg-gray-950" : scrolled ? "bg-blue-950" : "bg-transparent"}`}>
+			className={`shadow fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${open ? "bg-gray-950" : scrolled ? "bg-blue-950 shadow-2xl" : "bg-transparent"}`}>
 			<div className="mx-auto container py-8 flex justify-between items-center px-8 sm:px-0">
 				<h1 className="text-xl tracking-widest font-bold text-gray-100 uppercase">
 					dspwebstudio
 				</h1>
 
 				<nav className="hidden md:flex space-x-6 text-gray-100 uppercase ">
-					<a
-						href="#hero-content-main"
-						className="hover:text-blue-300 tracking-wide">
+					<a href="/" className="hover:text-blue-300 tracking-wide">
 						Inicio
 					</a>
 					<a href="#servicios" className="hover:text-blue-300">
