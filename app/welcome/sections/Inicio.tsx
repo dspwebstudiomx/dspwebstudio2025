@@ -1,7 +1,5 @@
-import React from "react";
 import Container from "~/components/Container";
 import TitleH2 from "~/components/Titles/TitleH2";
-// ...existing code...
 
 const Inicio = () => {
 	return (
