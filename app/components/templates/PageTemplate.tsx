@@ -2,8 +2,10 @@ import React from "react";
 
 const PageTemplate = ({ children }: { children: React.ReactNode }) => {
 	return (
-		<main className="flex flex-col gap-12 min-h-screen container mx-auto py-20 bg-gray-900">
-			{children}
+		<main className="bg-gray-900 text-white min-h-screen">
+			<section className="px-4 md:px-0 flex flex-col gap-40 py-32">
+				{children}
+			</section>
 		</main>
 	);
 };
