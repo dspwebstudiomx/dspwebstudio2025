@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+/* Clase para la fuente Audiowide */
+.audiowide-regular {
+	font-family: "Audiowide", cursive;
+	font-weight: normal;
+}
 @keyframes cta-pulse {
 	0% {
 		box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
@@ -19,6 +25,9 @@
 	--font-sans:
 		"Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
 		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--color-primary: #8b30db;
+	--color-primary-dark: #700cdc;
+	--color-primary-light: #9a6fff;
 }
 
 html,
@@ -31,5 +40,13 @@ body {
 }
 
 p {
-	font-size: 24px;
+	font-size: 16px;
+	@media screen and (min-width: 640px) {
+		font-size: 18px;
+	}
+}
+.h2.audiowide-regular {
+	font-family: "Audiowide", sans-serif;
+	font-weight: 400;
+	font-style: normal;
 }

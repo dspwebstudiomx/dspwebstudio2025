@@ -1,17 +1,14 @@
 import Container from "~/components/Container";
 import TitleH2 from "~/components/Titles/TitleH2";
 import Section from "./Section";
+import Paragraph from "~/components/Paragraph/Paragraph";
 
 const Servicios = () => {
 	return (
-		<Section id="servicios" background="gray-700">
+		<Section id="servicios" background="blue-700">
 			<Container>
 				<TitleH2 title="Nuestros Servicios" />
-				<p className="mb-4">
-					En dspwebstudio, ofrecemos una amplia gama de servicios para ayudarte
-					a establecer y mejorar tu presencia en línea. Nuestros servicios
-					incluyen:
-				</p>
+				<Paragraph content="En dspwebstudio, ofrecemos una amplia gama de servicios para ayudarte a establecer y mejorar tu presencia en línea. Nuestros servicios incluyen:" />
 				<ul className="list-disc list-inside mb-4">
 					<li className="mb-2">
 						<strong>Diseño y Desarrollo Web:</strong> Creamos sitios web

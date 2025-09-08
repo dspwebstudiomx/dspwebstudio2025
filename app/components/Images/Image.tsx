@@ -15,7 +15,7 @@ const Image = (props: imageProps) => {
 			width={props.width}
 			height={props.height}
 			srcSet=""
-			className="border-4 border-blue-400 rounded-4xl"
+			className="border-4 border-primary rounded-4xl shadow-2xl"
 			onError={(e) => {
 				e.currentTarget.src = placeholder;
 			}}
