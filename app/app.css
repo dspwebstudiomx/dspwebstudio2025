@@ -4,17 +4,6 @@
 	font-family: "Audiowide", cursive;
 	font-weight: normal;
 }
-@keyframes cta-pulse {
-	0% {
-		box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
-	}
-	70% {
-		box-shadow: 0 0 0 16px rgba(37, 99, 235, 0);
-	}
-	100% {
-		box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-	}
-}
 
 .animate-cta-pulse {
 	animation: cta-pulse 1.5s infinite;
@@ -25,9 +14,36 @@
 	--font-sans:
 		"Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
 		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	--color-primary: #8b30db;
-	--color-primary-dark: #700cdc;
-	--color-primary-light: #9a6fff;
+	--color-primary: #2563eb;
+	--color-primary-dark: #1e40af;
+	--color-primary-light: #3b82f6;
+	--color-blue: #2563eb;
+	--color-blue-dark: #1e40af;
+	--color-blue-light: #3b82f6;
+	--color-green: #16a34a;
+	--color-green-dark: #15803d;
+	--color-green-light: #22c55e;
+	--color-red: #dc2626;
+	--color-red-dark: #b91c1c;
+	--color-red-light: #ef4444;
+	--color-yellow: #eab308;
+	--color-yellow-dark: #ca8a04;
+	--color-yellow-light: #facc15;
+	--color-purple: #7c3aed;
+	--color-purple-dark: #6b21a8;
+	--color-purple-light: #a78bfa;
+}
+
+@keyframes cta-pulse {
+	0% {
+		box-shadow: 0 0 0 0 var(--color-red);
+	}
+	70% {
+		box-shadow: 0 0 0 16px rgba(37, 99, 235, 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+	}
 }
 
 html,
@@ -45,7 +61,7 @@ p {
 		font-size: 18px;
 	}
 }
-.h2.audiowide-regular {
+.audiowide-regular {
 	font-family: "Audiowide", sans-serif;
 	font-weight: 400;
 	font-style: normal;

@@ -11,9 +11,15 @@ const Inicio = () => {
 			<Container>
 				<div className="flex flex-col sm:flex-row items-center lg:items-start gap-12 sm:gap-6 md:gap-20 lg:gap-40">
 					<article id="inicio-texto" className="lg:w-2/3">
-						<TitleH2 title="Bienvenido a dspwebstudio" />
+						<TitleH2
+							title="Bienvenido a dspwebstudio"
+							colorClass="text-blue-light"
+						/>
 						<Paragraph content="En dspwebstudio, nos apasiona ayudar a emprendedores y pequeñas empresas a destacar en el mundo digital. Sabemos que cada negocio es único, y por eso ofrecemos soluciones personalizadas que se adaptan a tus necesidades y objetivos." />
-						<Button text="¡Impulsa tu presencia digital hoy! Contáctanos para una asesoría gratuita" />
+						<Button
+							text="¡Impulsa tu presencia digital hoy! Contáctanos para una asesoría gratuita"
+							colorClass="blue-dark"
+						/>
 					</article>
 					<article id="inicio-imagen">
 						<Image

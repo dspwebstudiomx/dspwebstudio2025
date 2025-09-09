@@ -8,7 +8,7 @@ type SectionProps = {
 
 const Section = ({ children, background, id }: SectionProps) => {
 	return (
-		<section id={id} className={`bg-${background} p-6 sm:px-12 lg:p-0`}>
+		<section id={id} className={`bg-${background} p-6 sm:p-12 xl:px-18`}>
 			{children}
 		</section>
 	);
