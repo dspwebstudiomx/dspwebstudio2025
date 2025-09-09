@@ -32,6 +32,9 @@
 	--color-purple: #7c3aed;
 	--color-purple-dark: #6b21a8;
 	--color-purple-light: #a78bfa;
+	--color-pink: #ec4899;
+	--color-pink-dark: #be185d;
+	--color-pink-light: #f472b6;
 }
 
 @keyframes cta-pulse {
@@ -48,8 +51,6 @@
 
 html,
 body {
-	@apply bg-white dark:bg-gray-950;
-
 	@media (prefers-color-scheme: dark) {
 		color-scheme: dark;
 	}
