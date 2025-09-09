@@ -1,5 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import {
+	FaHome,
+	FaServicestack,
+	FaBoxOpen,
+	FaRegCommentDots,
+	FaEnvelopeOpenText,
+} from "react-icons/fa";
 
 const Navbar = () => {
 	const menuRef = useRef<HTMLDivElement>(null);
@@ -68,8 +75,8 @@ const Navbar = () => {
 
 	return (
 		<header
-			className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${open ? "bg-primary-dark" : scrolled ? "bg-primary-dark shadow-2xl" : "bg-transparent"}`}>
-			<div className="mx-auto container py-0 flex justify-between items-center px-8 sm:px-0 lg:px-12 xl:px-0 h-20">
+			className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${open ? "bg-primary-dark" : scrolled ? "bg-blue-950 shadow-2xl" : "bg-transparent"}`}>
+			<div className="mx-auto container py-6 flex justify-between items-center px-8 sm:px-0 lg:px-12 xl:px-0 h-20">
 				{/* Logo */}
 				<a href="/" className="text-2xl font-bold text-white">
 					<img
@@ -110,39 +117,44 @@ const Navbar = () => {
 				<div className="fixed top-[80px] right-0 inset-0 z-40">
 					<div
 						ref={menuRef}
-						className={`md:hidden flex flex-col bg-blue-900 sm:px-4 sm:pb-4 space-y-2 h-[84vh] w-full shadow-2xl transform transition-transform duration-300 ${animateOut ? "slide-out-navbar " : "slide-in-navbar  border-t-2 border-gray-100"}`}>
+						className={`md:hidden flex flex-col bg-gray-900 sm:px-4 sm:pb-4 space-y-2 h-[90vh] w-full shadow-2xl transform transition-transform duration-300 ${animateOut ? "slide-out-navbar " : "slide-in-navbar  border-t-2 border-gray-100"}`}>
 						<a
 							href="#hero-container-main"
-							className="flex items-center justify-center text-gray-100 hover:bg-blue-600 text-xl uppercase tracking-widest p-8 active:text-blue-400 border-b-2 border-blue-400 text-center"
+							className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 text-xl uppercase tracking-widest p-8 active:text-blue-400 border-b-2 border-blue-400 text-center"
 							onClick={(e) => {
 								e.preventDefault();
 								window.scrollTo({ top: 0, behavior: "smooth" });
 								setOpen(false);
 							}}>
+							<FaHome className="text-2xl" />
 							Inicio
 						</a>
 						<a
 							href="#servicios"
-							className="flex items-center justify-center text-gray-100 hover:bg-blue-600 text-xl uppercase tracking-widest p-8 active:text-blue-400 border-b-2 border-blue-400 text-center"
+							className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 text-xl uppercase tracking-widest p-8 active:text-blue-400 border-b-2 border-blue-400 text-center"
 							onClick={() => setOpen(false)}>
+							<FaServicestack className="text-2xl" />
 							Servicios
 						</a>
 						<a
 							href="#paquetes"
-							className="flex items-center justify-center text-gray-100 hover:bg-blue-600 py-8 text-xl uppercase tracking-widest active:text-blue-400 border-b-2 border-blue-400 text-center"
+							className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 py-8 text-xl uppercase tracking-widest active:text-blue-400 border-b-2 border-blue-400 text-center"
 							onClick={() => setOpen(false)}>
+							<FaBoxOpen className="text-2xl" />
 							Paquetes
 						</a>
 						<a
 							href="#testimonios"
-							className="flex items-center justify-center text-gray-100 hover:bg-blue-600 py-8 text-xl uppercase tracking-widest active:text-blue-400 border-b-2 border-blue-400 text-center"
+							className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 py-8 text-xl uppercase tracking-widest active:text-blue-400 border-b-2 border-blue-400 text-center"
 							onClick={() => setOpen(false)}>
+							<FaRegCommentDots className="text-2xl" />
 							Testimonios
 						</a>
 						<a
 							href="#contacto"
-							className="flex items-center justify-center text-gray-100 hover:bg-blue-600 py-8 text-xl uppercase tracking-widest active:text-blue-400 border-b-2 border-blue-400 text-center"
+							className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 py-8 text-xl uppercase tracking-widest active:text-blue-400 border-b-2 border-blue-400 text-center"
 							onClick={() => setOpen(false)}>
+							<FaEnvelopeOpenText className="text-2xl" />
 							Contacto
 						</a>
 					</div>
