@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+cls/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -21,6 +21,12 @@ module.exports = {
           800: '#1e40af',
           900: '#1e3a8a',
         },
+        'blue-light': '#3b82f6',
+        'green-light': '#22c55e',
+        'red-light': '#ef4444',
+        'yellow-light': '#facc15',
+        'purple-light': '#a78bfa',
+        'pink-light': '#f472b6',
       },
     },
   },
