@@ -1,6 +1,7 @@
 import Navbar from "~/components/Navbar";
-import HeroInicio from "./Hero/HeroInicio";
+
 import Content from "./Content/Content.js";
+import HeroInicio from "./Hero/HeroInicio.js";
 
 export function Welcome() {
 	return (

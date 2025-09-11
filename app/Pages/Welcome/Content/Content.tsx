@@ -1,6 +1,6 @@
 import PageTemplate from "~/components/templates/PageTemplate";
-import Inicio from "../sections/Inicio";
-import Servicios from "../sections/Servicios";
+import Inicio from "../Sections/Inicio";
+import Servicios from "../Sections/Servicios";
 
 const Content = () => {
 	return (
