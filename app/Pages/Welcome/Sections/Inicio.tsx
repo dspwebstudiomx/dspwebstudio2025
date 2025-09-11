@@ -7,8 +7,8 @@ import Paragraph from "~/components/Paragraph/Paragraph";
 
 const Inicio = () => {
 	return (
-		<Section id="inicio">
-			<Container>
+		<Section id="inicio" aditionalClasses="" background="red-100/10">
+			<>
 				<div className="flex flex-col sm:flex-row items-center lg:items-start gap-12 sm:gap-6 md:gap-20 lg:gap-40">
 					<article id="inicio-texto" className="lg:w-2/3">
 						<TitleH2
@@ -30,7 +30,7 @@ const Inicio = () => {
 						/>
 					</article>
 				</div>
-			</Container>
+			</>
 		</Section>
 	);
 };

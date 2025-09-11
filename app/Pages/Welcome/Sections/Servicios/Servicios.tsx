@@ -19,7 +19,7 @@ const Servicios = () => {
 		<Section id="servicios" background="" aditionalClasses="">
 			<TitleH2 title="Nuestros Servicios" colorClass="text-yellow-light" />
 			<Paragraph content="En dspwebstudio, ofrecemos una amplia gama de servicios para ayudarte a establecer y mejorar tu presencia en línea. Nuestros servicios incluyen:" />
-			<ul className="list-inside mb-4 grid gap-12 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 list-none mt-12 md:mt-20">
+			<ul className="list-inside mb-4 grid gap-12 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 list-none mt-12 md:mt-20">
 				{serviciosLista.map((servicio, idx) => (
 					<li
 						key={servicio.title}
