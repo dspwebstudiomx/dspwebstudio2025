@@ -40,7 +40,7 @@ const Navbar = () => {
 	useEffect(() => {
 		const handleScroll = () => {
 			const scrollY = window.scrollY;
-			const vh = window.innerHeight * 0.05;
+			const vh = window.innerHeight * 0.2; // 20% de la altura de la ventana
 			setScrolled(scrollY > vh);
 		};
 		window.addEventListener("scroll", handleScroll);
