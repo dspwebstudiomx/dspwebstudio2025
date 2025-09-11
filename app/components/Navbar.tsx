@@ -8,6 +8,14 @@ import {
 	FaEnvelopeOpenText,
 } from "react-icons/fa";
 
+function scrollToSection(id: string, offset = 20) {
+	const el = document.getElementById(id);
+	if (el) {
+		const y = el.getBoundingClientRect().top + window.scrollY - offset;
+		window.scrollTo({ top: y, behavior: "smooth" });
+	}
+}
+
 const Navbar = () => {
 	const menuRef = useRef<HTMLDivElement>(null);
 	const [animateOut, setAnimateOut] = useState(false);
@@ -90,16 +98,40 @@ const Navbar = () => {
 					<a href="/" className="hover:text-blue-300 tracking-wide">
 						Inicio
 					</a>
-					<a href="#servicios" className="hover:text-blue-300">
+					<a
+						href="#servicios"
+						className="hover:text-blue-300"
+						onClick={(e) => {
+							e.preventDefault();
+							scrollToSection("servicios");
+						}}>
 						Servicios
 					</a>
-					<a href="#paquetes" className="hover:text-blue-300">
+					<a
+						href="#paquetes"
+						className="hover:text-blue-300"
+						onClick={(e) => {
+							e.preventDefault();
+							scrollToSection("paquetes");
+						}}>
 						Paquetes
 					</a>
-					<a href="#testimonios" className="hover:text-blue-300">
+					<a
+						href="#testimonios"
+						className="hover:text-blue-300"
+						onClick={(e) => {
+							e.preventDefault();
+							scrollToSection("testimonios");
+						}}>
 						Testimonios
 					</a>
-					<a href="#contacto" className="hover:text-blue-300">
+					<a
+						href="#contacto"
+						className="hover:text-blue-300"
+						onClick={(e) => {
+							e.preventDefault();
+							scrollToSection("contacto");
+						}}>
 						Contacto
 					</a>
 				</nav>
@@ -114,49 +146,67 @@ const Navbar = () => {
 
 			{/* Menú móvil con animación */}
 			{open && (
-				<div className="fixed top-[80px] right-0 inset-0 z-40">
+				<div className="fixed top-[80px] right-0 inset-0 z-40 flex flex-col">
 					<div
 						ref={menuRef}
-						className={`md:hidden flex flex-col bg-gray-900 sm:px-4 sm:pb-4 space-y-2 h-[90vh] w-full shadow-2xl transform transition-transform duration-300 ${animateOut ? "slide-out-navbar " : "slide-in-navbar  border-t-2 border-gray-100"}`}>
-						<a
-							href="#hero-container-main"
-							className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 text-xl uppercase tracking-widest p-8 active:text-blue-400 border-b-2 border-blue-400 text-center"
-							onClick={(e) => {
-								e.preventDefault();
-								window.scrollTo({ top: 0, behavior: "smooth" });
-								setOpen(false);
-							}}>
-							<FaHome className="text-2xl" />
-							Inicio
-						</a>
-						<a
-							href="#servicios"
-							className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 text-xl uppercase tracking-widest p-8 active:text-blue-400 border-b-2 border-blue-400 text-center"
-							onClick={() => setOpen(false)}>
-							<FaServicestack className="text-2xl" />
-							Servicios
-						</a>
-						<a
-							href="#paquetes"
-							className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 py-8 text-xl uppercase tracking-widest active:text-blue-400 border-b-2 border-blue-400 text-center"
-							onClick={() => setOpen(false)}>
-							<FaBoxOpen className="text-2xl" />
-							Paquetes
-						</a>
-						<a
-							href="#testimonios"
-							className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 py-8 text-xl uppercase tracking-widest active:text-blue-400 border-b-2 border-blue-400 text-center"
-							onClick={() => setOpen(false)}>
-							<FaRegCommentDots className="text-2xl" />
-							Testimonios
-						</a>
-						<a
-							href="#contacto"
-							className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 py-8 text-xl uppercase tracking-widest active:text-blue-400 border-b-2 border-blue-400 text-center"
-							onClick={() => setOpen(false)}>
-							<FaEnvelopeOpenText className="text-2xl" />
-							Contacto
-						</a>
+						className={`md:hidden flex flex-col bg-gray-900 sm:px-4 sm:pb-4 h-[90vh] w-full shadow-2xl transform transition-transform duration-300 ${animateOut ? "slide-out-navbar " : "slide-in-navbar  border-t-2 border-gray-100"}`}>
+						<div className="flex flex-col justify-start grow h-full">
+							<a
+								href="#hero-container-main"
+								className="flex items-center gap-3 justify-start pl-18 text-blue-light hover:bg-gray-950 text-xl uppercase tracking-widest py-8 active:text-blue-400 border-b-2 border-blue-400 text-center"
+								onClick={(e) => {
+									e.preventDefault();
+									window.scrollTo({ top: 0, behavior: "smooth" });
+									setOpen(false);
+								}}>
+								<FaHome className="text-2xl" />
+								Inicio
+							</a>
+							<a
+								href="#servicios"
+								className="flex items-center gap-3 justify-start pl-18 text-yellow-light hover:bg-blue-600 text-xl uppercase tracking-widest p-8 active:text-blue-400 border-b-2 border-blue-400 text-center"
+								onClick={(e) => {
+									e.preventDefault();
+									scrollToSection("servicios");
+									setOpen(false);
+								}}>
+								<FaServicestack className="text-2xl" />
+								Servicios
+							</a>
+							<a
+								href="#paquetes"
+								className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 py-8 text-xl uppercase tracking-widest active:text-blue-400 border-b-2 border-blue-400 text-center"
+								onClick={(e) => {
+									e.preventDefault();
+									scrollToSection("paquetes");
+									setOpen(false);
+								}}>
+								<FaBoxOpen className="text-2xl" />
+								Paquetes
+							</a>
+							<a
+								href="#testimonios"
+								className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 py-8 text-xl uppercase tracking-widest active:text-blue-400 border-b-2 border-blue-400 text-center"
+								onClick={(e) => {
+									e.preventDefault();
+									scrollToSection("testimonios");
+									setOpen(false);
+								}}>
+								<FaRegCommentDots className="text-2xl" />
+								Testimonios
+							</a>
+							<a
+								href="#contacto"
+								className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 py-8 text-xl uppercase tracking-widest active:text-blue-400 border-b-2 border-blue-400 text-center"
+								onClick={(e) => {
+									e.preventDefault();
+									scrollToSection("contacto");
+									setOpen(false);
+								}}>
+								<FaEnvelopeOpenText className="text-2xl" />
+								Contacto
+							</a>
+						</div>
 					</div>
 					{/* Fondo semitransparente para detectar clics fuera */}
 					<div className="flex-1" />

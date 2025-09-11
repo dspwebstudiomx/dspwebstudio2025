@@ -18,7 +18,7 @@ const Inicio = () => {
 						<Paragraph content="En dspwebstudio, nos apasiona ayudar a emprendedores y pequeñas empresas a destacar en el mundo digital. Sabemos que cada negocio es único, y por eso ofrecemos soluciones personalizadas que se adaptan a tus necesidades y objetivos." />
 						<Button
 							text="¡Impulsa tu presencia digital hoy! Contáctanos para una asesoría gratuita"
-							colorClass="blue-dark"
+							colorClass="pink-light"
 						/>
 					</article>
 					<article id="inicio-imagen">
