@@ -37,11 +37,14 @@ const Servicios = () => {
 							</div>
 						</div>
 						<p>{servicio.description}</p>
-						<ul className="list-disc pl-5">
-							{servicio.caracteristicas?.map((caracteristica, index) => (
-								<li key={index}>{caracteristica}</li>
-							))}
-						</ul>
+						<div>
+							<span className="text-xl mb-6">Características:</span>
+							<ul className="list-disc pl-5 mt-4">
+								{servicio.caracteristicas?.map((caracteristica, index) => (
+									<li key={index}>{caracteristica}</li>
+								))}
+							</ul>
+						</div>
 					</li>
 				))}
 			</ul>
