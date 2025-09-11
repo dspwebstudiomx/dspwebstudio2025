@@ -51,23 +51,6 @@ const Servicios = () => {
 				))}
 			</ul>
 
-			{/* Proceso de trabajo */}
-			<div className="mt-12">
-				<TitleH2 title="Nuestro Proceso" colorClass="text-green-light" />
-				<ol className="list-decimal pl-5 mt-4">
-					{proceso.map((p, i) => (
-						<li key={i}>{p}</li>
-					))}
-				</ol>
-			</div>
-
-			{/* Testimonio */}
-			<div className="mt-12 bg-gray-900 p-6 rounded-xl shadow">
-				<p className="italic mb-2">"{testimonio.mensaje}"</p>
-				<span className="font-bold">{testimonio.nombre}</span>,{" "}
-				<span>{testimonio.cargo}</span>
-			</div>
-
 			{/* Llamado a la acción */}
 			<div className="mt-12 flex justify-center">
 				<a
@@ -75,20 +58,6 @@ const Servicios = () => {
 					className="bg-yellow-light text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-yellow-500 transition">
 					Solicita tu cotización
 				</a>
-			</div>
-
-			{/* Preguntas frecuentes */}
-			<div className="mt-12">
-				<TitleH2 title="Preguntas Frecuentes" colorClass="text-purple-light" />
-				<ul className="mt-4">
-					{preguntasFrecuentes.map((pf, i) => (
-						<li key={i} className="mb-4">
-							<span className="font-semibold">{pf.pregunta}</span>
-							<br />
-							<span>{pf.respuesta}</span>
-						</li>
-					))}
-				</ul>
 			</div>
 		</Section>
 	);
