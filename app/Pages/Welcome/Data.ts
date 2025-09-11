@@ -121,9 +121,53 @@ export const preguntasFrecuentes = [
 	},
 ];
 
-export const testimonio = {
-	nombre: "María López",
-	cargo: "Directora de Marketing, Ejemplo S.A.",
-	mensaje:
-		"Trabajar con dspwebstudio fue una experiencia excelente. El equipo entendió nuestras necesidades y superó nuestras expectativas en cada etapa del proyecto.",
-};
+export const testimonio = [
+	{
+		id: 1,
+		nombre: "María López",
+		cargo: "Directora de Marketing, Ejemplo S.A.",
+		mensaje:
+			"Trabajar con dspwebstudio fue una experiencia excelente. El equipo entendió nuestras necesidades y superó nuestras expectativas en cada etapa del proyecto.",
+		borderColor: "border-blue-light",
+	},
+	{
+		id: 2,
+		nombre: "Carlos Martínez",
+		cargo: "CEO, Innovatech",
+		mensaje:
+			"Gracias a dspwebstudio, nuestra presencia en línea ha mejorado significativamente. Su enfoque personalizado y atención al detalle marcaron la diferencia.",
+		borderColor: "border-green-light",
+	},
+	{
+		id: 3,
+		nombre: "Ana Gómez",
+		cargo: "Fundadora, StartUp XYZ",
+		mensaje:
+			"El equipo de dspwebstudio es increíblemente profesional y creativo. Nos ayudaron a transformar nuestra visión en un sitio web funcional y atractivo.",
+		borderColor: "border-pink-light",
+	},
+	{
+		id: 4,
+		nombre: "Luis Fernández",
+		cargo: "Gerente de Proyectos, Tech Solutions",
+		mensaje:
+			"La colaboración con dspwebstudio fue fluida y eficiente. Su experiencia en diseño y desarrollo web nos permitió lanzar nuestro sitio rápidamente y con excelentes resultados.",
+		borderColor: "border-red-light",
+	},
+	{
+		id: 5,
+		nombre: "Sofía Ramírez",
+		cargo: "Cofundadora, EcoVida",
+		mensaje:
+			"El equipo de dspwebstudio no solo creó un sitio web hermoso, sino que también nos brindó una estrategia de marketing digital que ha aumentado significativamente nuestro tráfico y conversiones.",
+		borderColor: "border-yellow-light",
+	},
+	{
+		id: 6,
+		nombre: "Javier Torres",
+		cargo: "CTO, FinTech Pro",
+		mensaje:
+			"La profesionalidad y dedicación del equipo de dspwebstudio fueron evidentes desde el primer día. Su enfoque en la experiencia del usuario y el diseño intuitivo ha sido clave para el éxito de nuestro sitio.",
+		borderColor: "border-purple-light",
+	},
+];

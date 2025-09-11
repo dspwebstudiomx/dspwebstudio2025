@@ -18,7 +18,7 @@ const Servicios = () => {
 				{serviciosLista.map((servicio, idx) => (
 					<li
 						key={servicio.title}
-						className={`mb-2 border-2 ${servicio.borderColor} p-4 py-8 md:p-8 rounded-xl flex flex-col gap-8 transition-transform duration-300 hover:scale-105 hover:shadow-xl min-h-[250px]`}>
+						className={`mb-2 border-2 ${servicio.borderColor} p-4 py-8 md:p-8 rounded-xl flex flex-col gap-8 transition-transform duration-300 hover:scale-105 hover:shadow-xl min-h-[250px] bg-gray-800`}>
 						<div className="flex flex-row items-center gap-4">
 							{/* Ícono representativo (puedes cambiar el emoji por un ícono real si tienes una librería) */}
 							<span className="text-4xl mb-2">
