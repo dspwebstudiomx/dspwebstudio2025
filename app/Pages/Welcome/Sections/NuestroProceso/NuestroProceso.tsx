@@ -1,6 +1,6 @@
 import React from "react";
 import TitleH2 from "~/components/Titles/TitleH2";
-import { beneficios, proceso } from "../Servicios/serviciosData";
+import { beneficios, proceso } from "../../Data";
 import Section from "../Section";
 
 type Props = {};

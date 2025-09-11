@@ -1,10 +1,6 @@
 import React from "react";
 import TitleH2 from "~/components/Titles/TitleH2";
-import {
-	beneficios,
-	preguntasFrecuentes,
-	proceso,
-} from "../Servicios/serviciosData";
+import { beneficios, preguntasFrecuentes, proceso } from "../../Data";
 import Section from "../Section";
 
 type Props = {};

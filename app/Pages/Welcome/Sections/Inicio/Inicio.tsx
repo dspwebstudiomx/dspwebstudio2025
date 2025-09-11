@@ -19,6 +19,7 @@ const Inicio = () => {
 				<Button
 					text="¡Impulsa tu presencia digital hoy! Contáctanos para una asesoría gratuita"
 					colorClass="green-light"
+					link="#contacto"
 				/>
 			</article>
 			<article id="inicio-imagen">

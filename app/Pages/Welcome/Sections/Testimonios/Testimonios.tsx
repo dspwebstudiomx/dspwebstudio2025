@@ -1,4 +1,4 @@
-import { testimonio } from "../Servicios/serviciosData";
+import { testimonio } from "../../Data";
 import Section from "../Section";
 import TitleH2 from "~/components/Titles/TitleH2";
 

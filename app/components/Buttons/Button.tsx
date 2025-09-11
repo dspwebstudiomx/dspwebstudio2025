@@ -1,8 +1,10 @@
 import React from "react";
+import { href } from "react-router";
 
 interface ButtonProps {
 	text: string;
 	colorClass?: string;
+	link?: string;
 }
 
 // Mapeo para usar variables CSS personalizadas
@@ -46,7 +48,7 @@ function getColorKey(colorClass?: string): string | undefined {
 	return Object.keys(colorVarMap).find((key) => colorClass.includes(key));
 }
 
-const Button = ({ text, colorClass }: ButtonProps) => {
+const Button = ({ text, colorClass, link }: ButtonProps) => {
 	const styleVar: React.CSSProperties = {};
 	let keyframesStyle = "";
 	const found = getColorKey(colorClass);
@@ -66,7 +68,7 @@ const Button = ({ text, colorClass }: ButtonProps) => {
 		<div className="mt-12">
 			{keyframesStyle && <style>{keyframesStyle}</style>}
 			<a
-				href="#contacto"
+				href={link || "#"}
 				className="inline-block px-8 py-5 font-semibold rounded-xl transition-colors duration-300 w-full sm:w-[420px] md:text-lg mx-auto text-center"
 				style={styleVar}>
 				{text}

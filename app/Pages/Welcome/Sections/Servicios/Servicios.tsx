@@ -1,17 +1,12 @@
 // Datos
-import {
-	serviciosLista,
-	beneficios,
-	proceso,
-	preguntasFrecuentes,
-	testimonio,
-} from "./serviciosData";
+import { serviciosLista } from "../../Data";
 
 // Componentes
 import Container from "~/components/Container";
 import TitleH2 from "~/components/Titles/TitleH2";
 import Paragraph from "~/components/Paragraph/Paragraph";
 import Section from "../Section";
+import Button from "~/components/Buttons/Button";
 
 // Componente principal
 const Servicios = () => {
@@ -19,7 +14,7 @@ const Servicios = () => {
 		<Section id="servicios" background="" aditionalClasses="">
 			<TitleH2 title="Nuestros Servicios" colorClass="text-yellow-light" />
 			<Paragraph content="En dspwebstudio, ofrecemos una amplia gama de servicios para ayudarte a establecer y mejorar tu presencia en línea. Nuestros servicios incluyen:" />
-			<ul className="list-inside mb-4 grid gap-12 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 list-none mt-12 md:mt-20">
+			<ul className="list-inside mb-4 grid gap-12 md:grid-cols-1 lg:grid-cols-2 list-none mt-12 md:mt-20">
 				{serviciosLista.map((servicio, idx) => (
 					<li
 						key={servicio.title}
@@ -53,11 +48,7 @@ const Servicios = () => {
 
 			{/* Llamado a la acción */}
 			<div className="mt-12 flex justify-center">
-				<a
-					href="#contacto"
-					className="bg-yellow-light text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-yellow-500 transition">
-					Solicita tu cotización
-				</a>
+				<Button text="Solicita tu cotización" colorClass="blue-light" link="" />
 			</div>
 		</Section>
 	);

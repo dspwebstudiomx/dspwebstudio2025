@@ -1,6 +1,6 @@
 import React from "react";
 import TitleH2 from "~/components/Titles/TitleH2";
-import { beneficios } from "../Servicios/serviciosData";
+import { beneficios } from "../../Data";
 import Container from "~/components/Container";
 import Section from "../Section";
 

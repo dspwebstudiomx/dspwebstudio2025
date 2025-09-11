@@ -84,7 +84,7 @@ const Navbar = () => {
 	return (
 		<header
 			className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${open ? "bg-primary-dark" : scrolled ? "bg-blue-950 shadow-2xl" : "bg-transparent"}`}>
-			<div className="mx-auto container py-6 flex justify-between items-center px-8 sm:px-0 lg:px-12 xl:px-0 h-20">
+			<div className="mx-auto container py-6 flex justify-between items-center px-8 sm:px-0 lg:px-18 xl:px-12 h-20 xl:h-24">
 				{/* Logo */}
 				<a href="/" className="text-2xl font-bold text-white">
 					<img
