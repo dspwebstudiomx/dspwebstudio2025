@@ -1,10 +1,15 @@
+import { Welcome } from "~/Pages/Welcome/welcome";
 import type { Route } from "./+types/home";
-import { Welcome } from "../Pages/Welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
 	return [
-		{ title: "New React Router App" },
-		{ name: "description", content: "Welcome to React Router!" },
+		{ title: "dspwebstudio | Inicio - Diseño Web" },
+		{ logo: "dspwebstudio" },
+		{
+			name: "description",
+			content:
+				"Bienvenido a dspwebstudio, tu solución integral para diseño web.",
+		},
 	];
 }
 
