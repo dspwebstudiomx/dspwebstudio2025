@@ -24,12 +24,23 @@ function scrollToSection(id: string, offset?: number) {
 	}
 }
 
+const SECTIONS = [
+	{ id: "hero-container-main", label: "Inicio" },
+	{ id: "servicios", label: "Servicios" },
+	{ id: "paquetes", label: "Paquetes" },
+	{ id: "testimonios", label: "Testimonios" },
+	{ id: "contacto", label: "Contacto" },
+];
+
 const Navbar = () => {
 	const menuRef = useRef<HTMLDivElement>(null);
 	const [animateOut, setAnimateOut] = useState(false);
 	// Estado para el menú móvil
 	const [open, setOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
+	const [activeSection, setActiveSection] = useState<string>(
+		"hero-container-main"
+	);
 
 	// Bloquear/desbloquear scroll del body cuando el menú móvil está abierto
 	useEffect(() => {
@@ -44,14 +55,30 @@ const Navbar = () => {
 		};
 	}, [open]);
 
-	// Cambiar el estado de "scrolled" al hacer scroll
+	// Cambiar el estado de "scrolled" y detectar sección activa al hacer scroll
 	useEffect(() => {
 		const handleScroll = () => {
 			const scrollY = window.scrollY;
 			const vh = window.innerHeight * 0.05; // 5% de la altura de la ventana
 			setScrolled(scrollY > vh);
+
+			// Detectar sección activa
+			let currentSection = SECTIONS[0].id;
+			for (const section of SECTIONS) {
+				const el = document.getElementById(section.id);
+				if (el) {
+					const rect = el.getBoundingClientRect();
+					if (rect.top <= 140 && rect.bottom > 140) {
+						currentSection = section.id;
+						break;
+					}
+				}
+			}
+			setActiveSection(currentSection);
 		};
 		window.addEventListener("scroll", handleScroll);
+		// Llamar una vez al montar
+		handleScroll();
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
@@ -109,51 +136,24 @@ const Navbar = () => {
 				</a>
 
 				<nav className="hidden md:flex space-x-6 text-gray-100 uppercase ">
-					<a
-						href="/"
-						className="hover:text-blue-300 tracking-wide"
-						onClick={(e) => {
-							e.preventDefault();
-							window.scrollTo({ top: 0, behavior: "smooth" });
-						}}>
-						Inicio
-					</a>
-					<a
-						href="#servicios"
-						className="hover:text-blue-300"
-						onClick={(e) => {
-							e.preventDefault();
-							scrollToSection("servicios", 130);
-						}}>
-						Servicios
-					</a>
-					<a
-						href="#paquetes"
-						className="hover:text-blue-300"
-						onClick={(e) => {
-							e.preventDefault();
-							scrollToSection("paquetes", 130);
-						}}>
-						Paquetes
-					</a>
-					<a
-						href="#testimonios"
-						className="hover:text-blue-300"
-						onClick={(e) => {
-							e.preventDefault();
-							scrollToSection("testimonios", 130);
-						}}>
-						Testimonios
-					</a>
-					<a
-						href="#contacto"
-						className="hover:text-blue-300"
-						onClick={(e) => {
-							e.preventDefault();
-							scrollToSection("contacto", 130);
-						}}>
-						Contacto
-					</a>
+					{SECTIONS.map((section) => (
+						<a
+							key={section.id}
+							href={
+								section.id === "hero-container-main" ? "/" : `#${section.id}`
+							}
+							className={`tracking-wide hover:text-blue-300 transition-colors duration-200 ${activeSection === section.id ? "text-blue-400 font-bold" : ""}`}
+							onClick={(e) => {
+								e.preventDefault();
+								if (section.id === "hero-container-main") {
+									window.scrollTo({ top: 0, behavior: "smooth" });
+								} else {
+									scrollToSection(section.id, 130);
+								}
+							}}>
+							{section.label}
+						</a>
+					))}
 				</nav>
 
 				{/* Botón móvil */}
@@ -171,61 +171,41 @@ const Navbar = () => {
 						ref={menuRef}
 						className={`md:hidden flex flex-col bg-gray-900 sm:px-4 sm:pb-4 h-[90vh] w-full shadow-2xl transform transition-transform duration-300 ${animateOut ? "slide-out-navbar " : "slide-in-navbar  border-t-2 border-gray-100"}`}>
 						<div className="flex flex-col justify-start grow h-full">
-							<a
-								href="#hero-container-main"
-								className="flex items-center gap-3 justify-start pl-18 text-blue-light hover:bg-gray-950 text-xl uppercase tracking-widest py-8 active:text-blue-400 border-b-2 border-blue-400 text-center"
-								onClick={(e) => {
-									e.preventDefault();
-									window.scrollTo({ top: 0, behavior: "smooth" });
-									setOpen(false);
-								}}>
-								<FaHome className="text-2xl" />
-								Inicio
-							</a>
-							<a
-								href="#servicios"
-								className="flex items-center gap-3 justify-start pl-18 text-yellow-light hover:bg-blue-600 text-xl uppercase tracking-widest p-8 active:text-blue-400 border-b-2 border-blue-400 text-center"
-								onClick={(e) => {
-									e.preventDefault();
-									scrollToSection("servicios");
-									setOpen(false);
-								}}>
-								<FaServicestack className="text-2xl" />
-								Servicios
-							</a>
-							<a
-								href="#paquetes"
-								className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 py-8 text-xl uppercase tracking-widest active:text-blue-400 border-b-2 border-blue-400 text-center"
-								onClick={(e) => {
-									e.preventDefault();
-									scrollToSection("paquetes");
-									setOpen(false);
-								}}>
-								<FaBoxOpen className="text-2xl" />
-								Paquetes
-							</a>
-							<a
-								href="#testimonios"
-								className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 py-8 text-xl uppercase tracking-widest active:text-blue-400 border-b-2 border-blue-400 text-center"
-								onClick={(e) => {
-									e.preventDefault();
-									scrollToSection("testimonios");
-									setOpen(false);
-								}}>
-								<FaRegCommentDots className="text-2xl" />
-								Testimonios
-							</a>
-							<a
-								href="#contacto"
-								className="flex items-center gap-3 justify-start pl-18 text-gray-100 hover:bg-blue-600 py-8 text-xl uppercase tracking-widest active:text-blue-400 border-b-2 border-blue-400 text-center"
-								onClick={(e) => {
-									e.preventDefault();
-									scrollToSection("contacto");
-									setOpen(false);
-								}}>
-								<FaEnvelopeOpenText className="text-2xl" />
-								Contacto
-							</a>
+							{SECTIONS.map((section) => {
+								let icon = null;
+								if (section.id === "hero-container-main")
+									icon = <FaHome className="text-2xl" />;
+								if (section.id === "servicios")
+									icon = <FaServicestack className="text-2xl" />;
+								if (section.id === "paquetes")
+									icon = <FaBoxOpen className="text-2xl" />;
+								if (section.id === "testimonios")
+									icon = <FaRegCommentDots className="text-2xl" />;
+								if (section.id === "contacto")
+									icon = <FaEnvelopeOpenText className="text-2xl" />;
+								return (
+									<a
+										key={section.id}
+										href={
+											section.id === "hero-container-main"
+												? "/"
+												: `#${section.id}`
+										}
+										className={`flex items-center gap-3 justify-start pl-18 text-xl uppercase tracking-widest py-8 border-b-2 text-center transition-colors duration-200 hover:bg-blue-600 ${activeSection === section.id ? "text-blue-400 font-bold bg-gray-950" : "text-gray-100"}`}
+										onClick={(e) => {
+											e.preventDefault();
+											if (section.id === "hero-container-main") {
+												window.scrollTo({ top: 0, behavior: "smooth" });
+											} else {
+												scrollToSection(section.id);
+											}
+											setOpen(false);
+										}}>
+										{icon}
+										{section.label}
+									</a>
+								);
+							})}
 						</div>
 					</div>
 					{/* Fondo semitransparente para detectar clics fuera */}
