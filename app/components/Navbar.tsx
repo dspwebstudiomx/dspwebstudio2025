@@ -8,10 +8,18 @@ import {
 	FaEnvelopeOpenText,
 } from "react-icons/fa";
 
-function scrollToSection(id: string, offset = 20) {
+function scrollToSection(id: string, offset?: number) {
 	const el = document.getElementById(id);
+	const navbar = document.querySelector("header");
+	let navbarHeight = 0;
+	if (navbar) {
+		navbarHeight = (navbar as HTMLElement).offsetHeight;
+	}
+	if (typeof offset === "number") {
+		navbarHeight = offset;
+	}
 	if (el) {
-		const y = el.getBoundingClientRect().top + window.scrollY - offset;
+		const y = el.getBoundingClientRect().top + window.scrollY - navbarHeight;
 		window.scrollTo({ top: y, behavior: "smooth" });
 	}
 }
@@ -40,7 +48,7 @@ const Navbar = () => {
 	useEffect(() => {
 		const handleScroll = () => {
 			const scrollY = window.scrollY;
-			const vh = window.innerHeight * 0.2; // 20% de la altura de la ventana
+			const vh = window.innerHeight * 0.05; // 5% de la altura de la ventana
 			setScrolled(scrollY > vh);
 		};
 		window.addEventListener("scroll", handleScroll);
@@ -86,7 +94,13 @@ const Navbar = () => {
 			className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${open ? "bg-primary-dark" : scrolled ? "bg-blue-950 shadow-2xl" : "bg-transparent"}`}>
 			<div className="mx-auto container py-6 flex justify-between items-center px-8 sm:px-0 lg:px-18 xl:px-12 h-20 xl:h-24">
 				{/* Logo */}
-				<a href="/" className="text-2xl font-bold text-white">
+				<a
+					href="/"
+					className="text-2xl font-bold text-white"
+					onClick={(e) => {
+						e.preventDefault();
+						window.scrollTo({ top: 0, behavior: "smooth" });
+					}}>
 					<img
 						src="/images/dsp-white.png"
 						alt="dspwebstudio logo"
@@ -95,7 +109,13 @@ const Navbar = () => {
 				</a>
 
 				<nav className="hidden md:flex space-x-6 text-gray-100 uppercase ">
-					<a href="/" className="hover:text-blue-300 tracking-wide">
+					<a
+						href="/"
+						className="hover:text-blue-300 tracking-wide"
+						onClick={(e) => {
+							e.preventDefault();
+							window.scrollTo({ top: 0, behavior: "smooth" });
+						}}>
 						Inicio
 					</a>
 					<a
@@ -103,7 +123,7 @@ const Navbar = () => {
 						className="hover:text-blue-300"
 						onClick={(e) => {
 							e.preventDefault();
-							scrollToSection("servicios");
+							scrollToSection("servicios", 130);
 						}}>
 						Servicios
 					</a>
@@ -112,7 +132,7 @@ const Navbar = () => {
 						className="hover:text-blue-300"
 						onClick={(e) => {
 							e.preventDefault();
-							scrollToSection("paquetes");
+							scrollToSection("paquetes", 130);
 						}}>
 						Paquetes
 					</a>
@@ -121,7 +141,7 @@ const Navbar = () => {
 						className="hover:text-blue-300"
 						onClick={(e) => {
 							e.preventDefault();
-							scrollToSection("testimonios");
+							scrollToSection("testimonios", 130);
 						}}>
 						Testimonios
 					</a>
@@ -130,7 +150,7 @@ const Navbar = () => {
 						className="hover:text-blue-300"
 						onClick={(e) => {
 							e.preventDefault();
-							scrollToSection("contacto");
+							scrollToSection("contacto", 130);
 						}}>
 						Contacto
 					</a>
