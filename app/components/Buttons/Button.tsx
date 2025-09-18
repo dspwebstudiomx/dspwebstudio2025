@@ -60,9 +60,15 @@ const Button = ({ text, colorClass, link }: ButtonProps) => {
 			found.includes("light") || found === "yellow" || found === "yellow-light"
 				? "#222"
 				: "#fff";
+
+		// Sombra inicial visible
+		styleVar.boxShadow = `0 0 0 0 ${hexToRgba(hex, 0.7)}`;
+
+		// Nombre de animación único por color
+		const animationName = `cta-pulse-dynamic-${found}`;
 		// Animación personalizada para el color (usando rgba para opacidad)
-		keyframesStyle = `@keyframes cta-pulse-dynamic {\n0% { box-shadow: 0 0 0 0 ${hexToRgba(hex, 1)}; }\n70% { box-shadow: 0 0 0 16px ${hexToRgba(hex, 0)}; }\n100% { box-shadow: 0 0 0 0 ${hexToRgba(hex, 0)}; }\n}`;
-		styleVar.animation = "cta-pulse-dynamic 1.5s infinite";
+		keyframesStyle = `@keyframes ${animationName} {\n0% { box-shadow: 0 0 0 0 ${hexToRgba(hex, 0.7)}; }\n70% { box-shadow: 0 0 0 16px ${hexToRgba(hex, 0)}; }\n100% { box-shadow: 0 0 0 0 ${hexToRgba(hex, 0)}; }\n}`;
+		styleVar.animation = `${animationName} 1.5s infinite`;
 	}
 	return (
 		<div className="mt-12">
